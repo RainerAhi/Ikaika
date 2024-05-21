@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
+@import url('https://fonts.cdnfonts.com/css/lakesight-personal-use-only');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Solway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Solway:wght@700&display=swap');
+@import url("https://db.onlinewebfonts.com/c/14679a7a97d388dac3a0380375ca4afe?family=Neometric+Alt+Heavy");
+@import url("https://db.onlinewebfonts.com/c/21553b99c039b140f424afd283a33017?family=Mark+Web+W04+Ultra");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+@font-face {
+  font-family: 'Lakesight';
+  src: url('./Lakesight.woff2') format('woff2'),
+      url('./Lakesight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #ccc;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: all;
+  background-color: transparent;
+}
+
+.experience {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+/* TEXTS */
+
+.headline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 6vw;
+  text-align: left;
+  line-height: 100%;
+}
+
+.medium-headline{
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 3.25vw;
+  line-height: 100%;
+}
+
+.small-headline{
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 2.25vw;
+  line-height: 100%;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.smallest-headline{
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.75vw;
+  line-height: 100%;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.45vw;
+  line-height: 145%;
+}
+
+.small-description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.15vw;
+  line-height: 150%;
+}
+
+.small-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.85vw;
+  line-height: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.black {
+  color: #010100;
+}
+.white {
+  color: #fefeff;
+}
+.blue {
+  color: #007FFF;
+}
+.darkblue {
+  color: #070E2B;
+}
+.red {
+  color: #F02D25;
+}
+.grey {
+  color: #fefeff75;
+}
+.bold {
+  font-weight: 600;
+}
+
+/* NAVIGATION BAR */
+.navigation {
+  background-color: #fefeff50;
+  backdrop-filter: blur(16px);
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  z-index: 2;
+  position: relative;
+}
+
+.navigation-left {
+  display: flex;
+}
+
+.navigation-text {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 100%;
+}
+
+.navigation-right {
+  width: 2.25vw;
+  height: 2.25vw;
+  background-color: #000101;
+  border-radius: 50%;
+}
+
+
+/* SECTION ONE */
+
+.one {
+  background-color: #fefeff;
+}
+
+.white-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #000101;
+}
+
+.other-div {
+  width: 50vw;
+  height: 90vh;
+  position: fixed;
+  right: -25vw;
+  top: -45vh;
+  background-color: #feffef50;
+  backdrop-filter: blur(16px);
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inter-white {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #f1f1fb;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.inter-white-small {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: #f1f1fb;
+  font-size: 2rem;
+  width: 50%;
+  text-align: center;
+}
+
+
+/* SMOOTH SCROLL */
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* LOADING SCREEN */
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 4rem;
+  width: 100vw;
+  height: 100vh;
+  z-index: 12;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background-color: #fefeff;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.loading-screen--hidden {
+  animation: fade-out 0.5s ease-in-out forwards 1s;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loading-screen__title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 10rem;
+  text-transform: uppercase;
+  color: #000101;
+  margin: 0;
+}
+
+.progress__container {
+  width: 100%;
+  height: 1rem;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.progress__bar {
+  width: 0;
+  height: 100%;
+  background-color: #007FFF;
+  transition: width 0.5s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+
+  .title {
+    margin-top: 15%;
+    color: #531500;
+    font-size: 8rem;
+    z-index: 1;
+    line-height: 8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+  }
+  
+  .front {
+    color: #531500;
+    font-size: 9rem;
+    z-index: 6;
+    position: relative;
+    line-height: 8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  .other-div {
+    width: 80vw;
+    height: 80vh;
+    position: fixed;
+    right: -40vw;
+    top: -40vh;
+    background-color: #feffef50;
+    backdrop-filter: blur(16px);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .inter-white {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #f1f1fb;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+  
+  .inter-white-small {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #f1f1fb;
+    font-size: 1rem;
+    width: 50%;
+    text-align: center;
+  }
+
+}
+
+
+
