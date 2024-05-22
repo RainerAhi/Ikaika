@@ -148,7 +148,7 @@ body,
   padding: 0 5%;
   z-index: 2;
   position: relative;
-  background-color: #fefeff25;
+  background-color: #e0e0e025;
   backdrop-filter: blur(10px);
 }
 
@@ -185,10 +185,10 @@ body,
 /* SECTION ONE */
 
 .one {
-  background: rgb(254,254,255);
-  background: linear-gradient(162deg, rgba(254,254,255,1) 60%, rgba(0,127,255,0.25) 100%);
+  /* background: rgb(254,254,255);
+  background: linear-gradient(162deg, rgba(254,254,255,1) 60%, rgba(0,127,255,0.25) 100%); */
 
-  /* background-color: #fefeff; */
+  background-color: #e0e0e0;
 
   /* background: rgb(0,127,255);
   background: linear-gradient(162deg, rgba(0,127,255,0.25) 0%, rgba(254,254,255,1) 10%, rgba(254,254,255,1) 60%, rgba(0,127,255,0.25) 100%); */
