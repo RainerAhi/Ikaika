@@ -1,6 +1,6 @@
 import { Suspense, useRef, useState, useLayoutEffect, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Center, AccumulativeShadows, RandomizedLight, OrbitControls, Environment, Lightformer, MeshReflectorMaterial, Sparkles, Float, MeshPortalMaterial, useTexture, useHelper, Stage, SoftShadows, Effects, Shape } from '@react-three/drei'
+import { Center, AccumulativeShadows, RandomizedLight, OrbitControls, Environment, Lightformer, MeshReflectorMaterial, Sparkles, Float, MeshPortalMaterial, useTexture, useHelper, Stage, SoftShadows, Effects, Shape, ContactShadows } from '@react-three/drei'
 import { easing } from 'maath'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -42,20 +42,31 @@ export default function Experience() {
   return (
     <>
       <SoftShadows intensity={ 10 } />
-      <ambientLight intensity={0.5} />
-      <directionalLight castShadow position={[2.5, 8, 5]} shadow-mapSize={2048}>
-        <orthographicCamera attach="shadow-camera" args={[-10, 10, -10, 10, 0.1, 50]} />
+      <directionalLight shadow-bias={-0.001}  castShadow position={[10, 20, 5]} shadow-mapSize={2048}>
+        <orthographicCamera shadowBias={ -0.01 } attach="shadow-camera" args={[-10, 10, -10, 10, 0.1, 50]} />
       </directionalLight>
-      <pointLight position={[-10, 0, -20]} color="white" intensity={1} />
-      <pointLight position={[0, -10, 0]} intensity={1} />
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]} receiveShadow>
+      {/* <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]} receiveShadow>
         <planeGeometry args={[100, 100]} />
         <shadowMaterial transparent opacity={0.4} />
-      </mesh>
+      </mesh> */}
       <OrbitControls minPolarAngle={Math.PI / -2} maxPolarAngle={Math.PI / 2} enableZoom={ true } enableRotate={ true } enablePan={ true } />
-      <Environment preset='studio' />
-
+      <Environment preset='warehouse' />
       <Shapes />
+      <ContactShadows scale={100} position={[0, -2, 0]} blur={1} far={100} opacity={0.85} />
+
+      <Rig />
       </>
   )
+}
+
+function Rig() {
+  useFrame((state, delta) => {
+    easing.damp3(
+      state.camera.position,
+      [Math.sin(-state.pointer.x) * 5, state.pointer.y * 3.5, 15 + Math.cos(state.pointer.x) * 10],
+      0.2,
+      delta,
+    )
+    state.camera.lookAt(0, 0, 0)
+  })
 }

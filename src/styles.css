@@ -139,10 +139,8 @@ body,
 
 /* NAVIGATION BAR */
 .navigation {
-  background-color: #fefeff50;
-  backdrop-filter: blur(16px);
   width: 100%;
-  height: 10%;
+  height: 10vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -150,6 +148,8 @@ body,
   padding: 0 5%;
   z-index: 2;
   position: relative;
+  background-color: #fefeff25;
+  backdrop-filter: blur(10px);
 }
 
 .navigation-left {
@@ -169,11 +169,30 @@ body,
   border-radius: 50%;
 }
 
+.navigation-content {
+  border-radius: 100px;
+  width: 40%;
+  padding: 1.5vh 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3vw; 
+  background-color: #007FFF15;
+  backdrop-filter: blur(10px);
+}
+
 
 /* SECTION ONE */
 
 .one {
-  background-color: #fefeff;
+  background: rgb(254,254,255);
+  background: linear-gradient(162deg, rgba(254,254,255,1) 60%, rgba(0,127,255,0.25) 100%);
+
+  /* background-color: #fefeff; */
+
+  /* background: rgb(0,127,255);
+  background: linear-gradient(162deg, rgba(0,127,255,0.25) 0%, rgba(254,254,255,1) 10%, rgba(254,254,255,1) 60%, rgba(0,127,255,0.25) 100%); */
+
 }
 
 .white-button {
