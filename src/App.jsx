@@ -1,6 +1,6 @@
 import { Loader } from "@react-three/drei";
 import CanvasContainer from "./CanvasContainer";
-import { SectionOne } from "./Sections/SectionOne";
+import { SectionOne } from "./SectionOne";
 import Lenis from "@studio-freight/lenis";
 
 import { useProgress } from "@react-three/drei";
