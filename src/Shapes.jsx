@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Html, useGLTF, Text, Text3D, Center, Float, MeshTransmissionMaterial } from "@react-three/drei";
+import { useGLTF, Text, Text3D, Center, Float, MeshTransmissionMaterial, Html } from "@react-three/drei";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useFrame, useThree } from "@react-three/fiber";
@@ -8,26 +8,35 @@ import * as THREE from 'three';
 export default function Shapes() {
   const { camera, scene } = useThree();
   const [hoveredText, setHoveredText] = useState("IKAIKA");
-
+  const [showOtherDiv, setShowOtherDiv] = useState(false);
+  const [isDivHovered, setIsDivHovered] = useState(false); // Flag to track if the div is hovered
 
   const handleMouseEnter = (mesh, text) => {
-    document.body.style.cursor = 'pointer';
-    gsap.to(mesh.rotation, {
-      y: mesh.rotation.y + Math.PI * 2, // 360 degrees
-      duration: 2,
-      ease: 'power2.inOut'
-    });
-    setHoveredText(text);
+    if (!isDivHovered) { // Check if the div is not hovered
+      document.body.style.cursor = 'pointer';
+      gsap.to(mesh.rotation, {
+        y: mesh.rotation.y + Math.PI * 2, // 360 degrees
+        duration: 2,
+        ease: 'power2.inOut'
+      });
+      setHoveredText(text);
+    }
   };
 
   const handleMouseLeave = () => {
     document.body.style.cursor = 'default';
   };
 
-  const [showOtherDiv, setShowOtherDiv] = useState(false);
-
   const handleWhiteButtonClick = () => {
     setShowOtherDiv(!showOtherDiv);
+  };
+
+  const handleDivMouseEnter = () => {
+    setIsDivHovered(true); // Set the flag to true when mouse enters the div
+  };
+
+  const handleDivMouseLeave = () => {
+    setIsDivHovered(false); // Set the flag to false when mouse leaves the div
   };
   
 
@@ -106,11 +115,10 @@ export default function Shapes() {
       </group>
 
       {showOtherDiv && (
-        <Html  >
-          <div className="overlay">
-            <div className="overlay-content" >
-              <button onClick={() => setShowOtherDiv(false)}>Hide</button>
-            </div>
+        <Html>
+          {/* Apply onMouseEnter and onMouseLeave handlers to the div */}
+          <div className="other-div" onMouseEnter={handleDivMouseEnter} onMouseLeave={handleDivMouseLeave}>
+            This div becomes visible when you click the mesh.
           </div>
         </Html>
       )}
