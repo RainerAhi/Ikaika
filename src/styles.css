@@ -270,7 +270,7 @@ html.lenis {
   display: grid;
   place-items: center;
   text-align: center;
-  background-color: #fefeff;
+  background-color: #e0e0e0;
   opacity: 1;
   transition: opacity 1s ease-in-out;
 }
