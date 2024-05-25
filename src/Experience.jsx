@@ -11,7 +11,7 @@ import { Loading } from './Loading'
 import Shapes from './Shapes'
 gsap.registerPlugin(ScrollTrigger)
 
-export default function Experience() {
+export default function Experience({ showOtherDiv, setShowOtherDiv }) {
 
   const { camera, scene } = useThree()
 
@@ -41,24 +41,16 @@ export default function Experience() {
 
   return (
     <>
-      {/* <SoftShadows intensity={ 10 } />
-      <directionalLight shadow-bias={-0.001}  castShadow position={[10, 20, 5]} shadow-mapSize={2048}>
-        <orthographicCamera shadowBias={ -0.01 } attach="shadow-camera" args={[-10, 10, -10, 10, 0.1, 50]} />
-      </directionalLight> */}
-      {/* <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]} receiveShadow>
-        <planeGeometry args={[100, 100]} />
-        <shadowMaterial transparent opacity={0.4} />
-      </mesh> */}
-
       <color attach="background" args={["#e0e0e0"]} />
       <spotLight position={[20, 20, 10]} penumbra={1} castShadow angle={0.2} />
 
-      <OrbitControls minPolarAngle={Math.PI / -2} maxPolarAngle={Math.PI / 2} enableZoom={ true } enableRotate={ true } enablePan={ true } />
+      {/* <OrbitControls minPolarAngle={Math.PI / -2} maxPolarAngle={Math.PI / 2} enableZoom={ true } enableRotate={ true } enablePan={ true } /> */}
       <Environment preset="city">
         <Lightformer intensity={8} position={[10, 5, 0]} scale={[10, 50, 1]} />
       </Environment>
-      <Shapes />
-      <ContactShadows scale={100} position={[0, -3, 0]} blur={1} far={10} opacity={0.7} />
+      <Shapes showOtherDiv={showOtherDiv} setShowOtherDiv={setShowOtherDiv} />
+      <ContactShadows scale={100} position={[0, -4, 0]} blur={1} far={10} opacity={0.7} />
+      <Rig />
 
       </>
   )
@@ -68,7 +60,7 @@ function Rig() {
   useFrame((state, delta) => {
     easing.damp3(
       state.camera.position,
-      [Math.sin(-state.pointer.x) * 5, state.pointer.y * 3.5, 15 + Math.cos(state.pointer.x) * 10],
+      [Math.sin(-state.pointer.x) * 5, state.pointer.y * 3.5, 10 + Math.cos(state.pointer.x) * 10],
       0.2,
       delta,
     )

@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-export const SectionOne = () => {
+export const SectionOne = ({ showOtherDiv, setShowOtherDiv }) => {
+
+    const handleCloseOverlay = () => {
+        setShowOtherDiv(false);
+      };
 
     return (
         <section className="section one">
@@ -10,6 +14,13 @@ export const SectionOne = () => {
                 </div>
                 <div className="navigation-right" />
             </div>
+
+            {showOtherDiv && (
+                <div className="overlay-div">
+                    <button onClick={handleCloseOverlay}>Close</button>
+                </div>
+            )}
+
         </section>
     )
 }

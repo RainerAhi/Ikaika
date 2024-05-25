@@ -4,7 +4,7 @@ import { SectionOne } from "./SectionOne";
 import Lenis from "@studio-freight/lenis";
 
 import { useProgress } from "@react-three/drei";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 
 const LoadingScreen = () => {
   const { progress, active } = useProgress();
@@ -53,14 +53,18 @@ function App() {
   
   requestAnimationFrame(raf);
 
+  const [showOtherDiv, setShowOtherDiv] = useState(false);
+
     return (
       <>
             <LoadingScreen />
+
+
             <div  className="experience">
-                <CanvasContainer />
+                <CanvasContainer showOtherDiv={showOtherDiv} setShowOtherDiv={setShowOtherDiv} />
             </div>
 
-            <SectionOne />
+            <SectionOne showOtherDiv={showOtherDiv} setShowOtherDiv={setShowOtherDiv} />
             
       </>
     )
