@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from 'three';
 
-export default function Shapes({ showOtherDiv, setShowOtherDiv }) {
+export default function Shapes({ showOverlayOne, setShowOverlayOne, showOverlayTwo, setShowOverlayTwo, showOverlayThree, setShowOverlayThree, showOverlayFour, setShowOverlayFour, showOverlayFive, setShowOverlayFive, showOverlaySix, setShowOverlaySix }) {
   const { camera, scene } = useThree();
   const [hoveredText, setHoveredText] = useState("IKAIKA");
 
@@ -23,8 +23,12 @@ export default function Shapes({ showOtherDiv, setShowOtherDiv }) {
     document.body.style.cursor = 'default';
   };
 
-  const handleWhiteButtonClick = () => {
-    setShowOtherDiv(!showOtherDiv);
+  const overlayOne = () => {
+    setShowOverlayOne(!showOverlayOne);
+  };
+
+  const overlayTwo = () => {
+    setShowOverlayTwo(!showOverlayTwo);
   };
   
 
@@ -50,7 +54,7 @@ export default function Shapes({ showOtherDiv, setShowOtherDiv }) {
       
       <group position={[-2.5, 1.15, 0]}>
         <Float speed={ 1.5 } rotationIntensity={ 1.5 } >
-          <mesh onClick={handleWhiteButtonClick} scale={ 2 } position={[0, 0.15, 0]} onPointerEnter={(e) => handleMouseEnter(e.object, "ABOU1")} onPointerLeave={handleMouseLeave}>
+          <mesh onClick={overlayOne} scale={ 2 } position={[0, 0.15, 0]} onPointerEnter={(e) => handleMouseEnter(e.object, "ABOU1")} onPointerLeave={handleMouseLeave}>
             <boxGeometry args={[0.75, 0.75, 0.75]} />
             <MeshTransmissionMaterial transmissionSampler={ true } color={ "#8DC0FF" } thickness={2} />
           </mesh>
@@ -59,7 +63,7 @@ export default function Shapes({ showOtherDiv, setShowOtherDiv }) {
 
       <group position={[0, 1.15, 0]}>
         <Float speed={ 1.5 } rotationIntensity={ 1.5 } >
-          <mesh scale={ 2 } position={[0, 0.15, 0]} onPointerEnter={(e) => handleMouseEnter(e.object, "ABOU2")} onPointerLeave={handleMouseLeave}>
+          <mesh onClick={overlayTwo} scale={ 2 } position={[0, 0.15, 0]} onPointerEnter={(e) => handleMouseEnter(e.object, "ABOU2")} onPointerLeave={handleMouseLeave}>
             <sphereGeometry args={[0.5, 22, 50]} />
             <MeshTransmissionMaterial transmissionSampler={ true } color={ "#007FFF" } thickness={2} />
           </mesh>

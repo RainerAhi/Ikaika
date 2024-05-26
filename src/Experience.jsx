@@ -11,7 +11,7 @@ import { Loading } from './Loading'
 import Shapes from './Shapes'
 gsap.registerPlugin(ScrollTrigger)
 
-export default function Experience({ showOtherDiv, setShowOtherDiv }) {
+export default function Experience({ showOverlayOne, setShowOverlayOne, showOverlayTwo, setShowOverlayTwo, showOverlayThree, setShowOverlayThree, showOverlayFour, setShowOverlayFour, showOverlayFive, setShowOverlayFive, showOverlaySix, setShowOverlaySix }) {
 
   const { camera, scene } = useThree()
 
@@ -48,7 +48,14 @@ export default function Experience({ showOtherDiv, setShowOtherDiv }) {
       <Environment preset="city">
         <Lightformer intensity={8} position={[10, 5, 0]} scale={[10, 50, 1]} />
       </Environment>
-      <Shapes showOtherDiv={showOtherDiv} setShowOtherDiv={setShowOtherDiv} />
+      <Shapes
+        showOverlayOne={showOverlayOne} setShowOverlayOne={setShowOverlayOne}
+        showOverlayTwo={showOverlayTwo} setShowOverlayTwo={setShowOverlayTwo} 
+        showOverlayThree={showOverlayThree} setShowOverlayThree={setShowOverlayThree}
+        showOverlayFour={showOverlayFour} setShowOverlayFour={setShowOverlayFour}
+        showOverlayFive={showOverlayFive} setShowOverlayFive={setShowOverlayFive}
+        showOverlaySix={showOverlaySix} setShowOverlaySix={setShowOverlaySix}
+      />
       <ContactShadows scale={100} position={[0, -4, 0]} blur={1} far={10} opacity={0.7} />
       <Rig />
 

@@ -53,7 +53,12 @@ function App() {
   
   requestAnimationFrame(raf);
 
-  const [showOtherDiv, setShowOtherDiv] = useState(false);
+  const [showOverlayOne, setShowOverlayOne] = useState(false);
+  const [showOverlayTwo, setShowOverlayTwo] = useState(false);
+  const [showOverlayThree, setShowOverlayThree] = useState(false);
+  const [showOverlayFour, setShowOverlayFour] = useState(false);
+  const [showOverlayFive, setShowOverlayFive] = useState(false);
+  const [showOverlaySix, setShowOverlaySix] = useState(false);
 
     return (
       <>
@@ -61,10 +66,24 @@ function App() {
 
 
             <div  className="experience">
-                <CanvasContainer showOtherDiv={showOtherDiv} setShowOtherDiv={setShowOtherDiv} />
+                <CanvasContainer
+                  showOverlayOne={showOverlayOne} setShowOverlayOne={setShowOverlayOne}
+                  showOverlayTwo={showOverlayTwo} setShowOverlayTwo={setShowOverlayTwo} 
+                  showOverlayThree={showOverlayThree} setShowOverlayThree={setShowOverlayThree}
+                  showOverlayFour={showOverlayFour} setShowOverlayFour={setShowOverlayFour}
+                  showOverlayFive={showOverlayFive} setShowOverlayFive={setShowOverlayFive}
+                  showOverlaySix={showOverlaySix} setShowOverlaySix={setShowOverlaySix}
+                />
             </div>
 
-            <SectionOne showOtherDiv={showOtherDiv} setShowOtherDiv={setShowOtherDiv} />
+            <SectionOne
+              showOverlayOne={showOverlayOne} setShowOverlayOne={setShowOverlayOne}
+              showOverlayTwo={showOverlayTwo} setShowOverlayTwo={setShowOverlayTwo} 
+              showOverlayThree={showOverlayThree} setShowOverlayThree={setShowOverlayThree}
+              showOverlayFour={showOverlayFour} setShowOverlayFour={setShowOverlayFour}
+              showOverlayFive={showOverlayFive} setShowOverlayFive={setShowOverlayFive}
+              showOverlaySix={showOverlaySix} setShowOverlaySix={setShowOverlaySix}
+            />
             
       </>
     )

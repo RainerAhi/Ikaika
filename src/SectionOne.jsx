@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { CSSTransition } from 'react-transition-group';
 
-export const SectionOne = ({ showOtherDiv, setShowOtherDiv }) => {
+export const SectionOne = ({ showOverlayOne, setShowOverlayOne, showOverlayTwo, setShowOverlayTwo, showOverlayThree, setShowOverlayThree, showOverlayFour, setShowOverlayFour, showOverlayFive, setShowOverlayFive, showOverlaySix, setShowOverlaySix }) => {
 
-    const handleCloseOverlay = () => {
-        setShowOtherDiv(false);
+    const closeOverlayOne = () => {
+        setShowOverlayOne(false);
+      };
+
+      const closeOverlayTwo = () => {
+        setShowOverlayTwo(false);
       };
 
     return (
@@ -15,9 +20,22 @@ export const SectionOne = ({ showOtherDiv, setShowOtherDiv }) => {
                 <div className="navigation-right" />
             </div>
 
-            {showOtherDiv && (
+            <CSSTransition
+                in={ showOverlayTwo }
+                timeout={ 500 }
+                classNames="fade"
+                unmountOnExit
+            >
+                <div className={`overlay-div ${showOverlayTwo ? "active" : ""}`}>
+                    <h1>2</h1>
+                    <button onClick={closeOverlayTwo}>Close</button>
+                </div>
+            </CSSTransition>
+
+            {showOverlayOne && (
                 <div className="overlay-div">
-                    <button onClick={handleCloseOverlay}>Close</button>
+                    <h1>1</h1>
+                    <button onClick={closeOverlayOne}>Close</button>
                 </div>
             )}
 
