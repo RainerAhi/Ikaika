@@ -137,13 +137,15 @@ body,
   font-weight: 600;
 }
 
+/* CSS TRANSITION FADING OVERLAYS */
+
 .fade-enter {
   opacity: 0;
 }
 
 .fade-enter-active {
   opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in;
 }
 
 .fade-exit {
@@ -152,7 +154,7 @@ body,
 
 .fade-exit-active {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-out;
 }
 
 /* NAVIGATION BAR */
@@ -212,26 +214,6 @@ body,
 
 }
 
-.overlay {
-  width: 50vw;
-  height: 90vh;
-  position: absolute;
-  background-color: #feffef50;
-  backdrop-filter: blur(16px);
-  border-radius: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.overlay-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  z-index: 20;
-}
-
 .overlay-div {
   position: fixed;
   top: 50%;
@@ -239,8 +221,8 @@ body,
   z-index: 30;
   transform: translate(-50%, -50%);
   padding: 40px; /* Increase padding for more space inside the div */
-  width: 1300px; /* Set a wider width */
-  height: 700px; /* Set a taller height */
+  width: 70vw; /* Set a wider width */
+  height: 75vh; /* Set a taller height */
   background-color: #fefeff50;
   backdrop-filter: blur(10px);
   border-radius: 50px;

@@ -30,6 +30,22 @@ export default function Shapes({ showOverlayOne, setShowOverlayOne, showOverlayT
   const overlayTwo = () => {
     setShowOverlayTwo(!showOverlayTwo);
   };
+
+  const overlayThree = () => {
+    setShowOverlayThree(!showOverlayThree);
+  };
+
+  const overlayFour = () => {
+    setShowOverlayFour(!showOverlayFour);
+  };
+
+  const overlayFive = () => {
+    setShowOverlayFive(!showOverlayFive);
+  };
+
+  const overlaySix = () => {
+    setShowOverlaySix(!showOverlaySix);
+  };
   
 
   return (
@@ -72,7 +88,7 @@ export default function Shapes({ showOverlayOne, setShowOverlayOne, showOverlayT
 
       <group position={[2.5, 1.15, 0]}>
         <Float speed={ 1.5 } rotationIntensity={ 1.5 } >
-          <mesh scale={ 0.2 } position={[0, 0, 0]} onPointerEnter={(e) => handleMouseEnter(e.object, "ABOU3")} onPointerLeave={handleMouseLeave}>
+          <mesh onClick={overlayThree} scale={ 0.2 } position={[0, 0, 0]} onPointerEnter={(e) => handleMouseEnter(e.object, "ABOU3")} onPointerLeave={handleMouseLeave}>
             <torusGeometry args={[3, 1.5, 16, 100]} />
             <MeshTransmissionMaterial transmissionSampler={ true } color={ "#8DC0FF" } thickness={2} />
           </mesh>
@@ -81,7 +97,7 @@ export default function Shapes({ showOverlayOne, setShowOverlayOne, showOverlayT
 
       <group position={[-2.5, -1.15, 0]}>
         <Float speed={ 1.5 } rotationIntensity={ 1.5 } >
-          <mesh scale={ 0.2 } position={[0, 0, 0]} onPointerEnter={(e) => handleMouseEnter(e.object, "ABOU4")} onPointerLeave={handleMouseLeave}>
+          <mesh onClick={overlayFour} scale={ 0.2 } position={[0, 0, 0]} onPointerEnter={(e) => handleMouseEnter(e.object, "ABOU4")} onPointerLeave={handleMouseLeave}>
             <torusKnotGeometry args={[3, 1, 100, 16]} />
             <MeshTransmissionMaterial transmissionSampler={ true } color={ "#007FFF" } thickness={2} />
           </mesh>
@@ -90,7 +106,7 @@ export default function Shapes({ showOverlayOne, setShowOverlayOne, showOverlayT
 
       <group position={[0, -1.15, 0]}>
         <Float speed={ 1.5 } rotationIntensity={ 1.5 } >
-          <mesh scale={ 0.2 } position={[0, 0, 0]} onPointerEnter={(e) => handleMouseEnter(e.object, "ABOU5")} onPointerLeave={handleMouseLeave}>
+          <mesh onClick={overlayFive} scale={ 0.2 } position={[0, 0, 0]} onPointerEnter={(e) => handleMouseEnter(e.object, "ABOU5")} onPointerLeave={handleMouseLeave}>
             <octahedronGeometry args={[5, 0]} />
             <MeshTransmissionMaterial transmissionSampler={ true } color={ "#8DC0FF" } thickness={2} />
           </mesh>
@@ -99,7 +115,7 @@ export default function Shapes({ showOverlayOne, setShowOverlayOne, showOverlayT
 
       <group position={[2.5, -1.15, 0]}>
         <Float speed={ 1.5 } rotationIntensity={ 1.5 } >
-          <mesh scale={ 0.2 } position={[0, 0, 0]} rotation={ [ 0, 0, Math.PI * 1 ] } onPointerEnter={(e) => handleMouseEnter(e.object, "ABOU6")} onPointerLeave={handleMouseLeave}>
+          <mesh onClick={overlaySix} scale={ 0.2 } position={[0, 0, 0]} rotation={ [ 0, 0, Math.PI * 1 ] } onPointerEnter={(e) => handleMouseEnter(e.object, "ABOU6")} onPointerLeave={handleMouseLeave}>
             <coneGeometry args={[5, 7.5, 10]} />
             <MeshTransmissionMaterial transmissionSampler={ true } color={ "#007FFF" } thickness={2} />
           </mesh>
