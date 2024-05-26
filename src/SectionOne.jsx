@@ -43,8 +43,12 @@ export const SectionOne = ({ showOverlayOne, setShowOverlayOne, showOverlayTwo, 
                 unmountOnExit
             >
                 <div className={`overlay-div ${showOverlayOne ? "active" : ""}`}>
-                    <h1>1</h1>
-                    <button onClick={closeOverlayOne}>Close</button>
+                    <div className="overlay-navigation" >
+                        <h1 className="overlay-navigation-text" >About</h1>
+                        <button className="overlay-close-button" onClick={closeOverlayOne}>
+                            <i class="fa-solid fa-x"></i>
+                        </button>
+                    </div>
                 </div>
             </CSSTransition>
 
@@ -55,8 +59,12 @@ export const SectionOne = ({ showOverlayOne, setShowOverlayOne, showOverlayTwo, 
                 unmountOnExit
             >
                 <div className={`overlay-div ${showOverlayTwo ? "active" : ""}`}>
-                    <h1>2</h1>
-                    <button onClick={closeOverlayTwo}>Close</button>
+                    <div className="overlay-navigation" >
+                        <h1 className="overlay-navigation-text" >Invested alongside</h1>
+                        <button className="overlay-close-button" onClick={closeOverlayTwo}>
+                            <i class="fa-solid fa-x"></i>
+                        </button>
+                    </div>
                 </div>
             </CSSTransition>
 
@@ -67,8 +75,12 @@ export const SectionOne = ({ showOverlayOne, setShowOverlayOne, showOverlayTwo, 
                 unmountOnExit
             >
                 <div className={`overlay-div ${showOverlayThree ? "active" : ""}`}>
-                    <h1>3</h1>
-                    <button onClick={closeOverlayThree}>Close</button>
+                    <div className="overlay-navigation" >
+                        <h1 className="overlay-navigation-text" >As seen in</h1>
+                        <button className="overlay-close-button" onClick={closeOverlayThree}>
+                            <i class="fa-solid fa-x"></i>
+                        </button>
+                    </div>
                 </div>
             </CSSTransition>
 
@@ -79,8 +91,12 @@ export const SectionOne = ({ showOverlayOne, setShowOverlayOne, showOverlayTwo, 
                 unmountOnExit
             >
                 <div className={`overlay-div ${showOverlayFour ? "active" : ""}`}>
-                    <h1>4</h1>
-                    <button onClick={closeOverlayFour}>Close</button>
+                    <div className="overlay-navigation" >
+                        <h1 className="overlay-navigation-text" >Resources</h1>
+                        <button className="overlay-close-button" onClick={closeOverlayFour}>
+                            <i class="fa-solid fa-x"></i>
+                        </button>
+                    </div>
                 </div>
             </CSSTransition>
 
@@ -91,8 +107,12 @@ export const SectionOne = ({ showOverlayOne, setShowOverlayOne, showOverlayTwo, 
                 unmountOnExit
             >
                 <div className={`overlay-div ${showOverlayFive ? "active" : ""}`}>
-                    <h1>5</h1>
-                    <button onClick={closeOverlayFive}>Close</button>
+                    <div className="overlay-navigation" >
+                        <h1 className="overlay-navigation-text" >Startup Playground</h1>
+                        <button className="overlay-close-button" onClick={closeOverlayFive}>
+                            <i class="fa-solid fa-x"></i>
+                        </button>
+                    </div>
                 </div>
             </CSSTransition>
 
@@ -103,8 +123,12 @@ export const SectionOne = ({ showOverlayOne, setShowOverlayOne, showOverlayTwo, 
                 unmountOnExit
             >
                 <div className={`overlay-div ${showOverlaySix ? "active" : ""}`}>
-                    <h1>6</h1>
-                    <button onClick={closeOverlaySix}>Close</button>
+                    <div className="overlay-navigation" >
+                        <h1 className="overlay-navigation-text" >Contact</h1>
+                        <button className="overlay-close-button" onClick={closeOverlaySix}>
+                            <i class="fa-solid fa-x"></i>
+                        </button>
+                    </div>
                 </div>
             </CSSTransition>
 

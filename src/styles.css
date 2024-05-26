@@ -220,12 +220,45 @@ body,
   left: 50%;
   z-index: 30;
   transform: translate(-50%, -50%);
-  padding: 40px; /* Increase padding for more space inside the div */
-  width: 70vw; /* Set a wider width */
-  height: 75vh; /* Set a taller height */
+  padding: 2.5% 5%;
+  width: 70vw;
+  height: 75vh;
   background-color: #fefeff50;
   backdrop-filter: blur(10px);
   border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.overlay-navigation-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.45vw;
+  line-height: 100%;
+}
+
+.overlay-close-button {
+  width: 2vw;
+  height: 2vw;
+  border-radius: 100%;
+  background-color: #fefeff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.5s ease-in;
+}
+
+.overlay-close-button:hover {
+  background-color: #fefeff75;
 }
 
 /* SMOOTH SCROLL */
