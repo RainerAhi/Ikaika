@@ -1,26 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
-@import url('https://fonts.cdnfonts.com/css/lakesight-personal-use-only');
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Solway:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Solway:wght@700&display=swap');
-@import url("https://db.onlinewebfonts.com/c/14679a7a97d388dac3a0380375ca4afe?family=Neometric+Alt+Heavy");
-@import url("https://db.onlinewebfonts.com/c/21553b99c039b140f424afd283a33017?family=Mark+Web+W04+Ultra");
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-
-@font-face {
-  font-family: 'Lakesight';
-  src: url('./Lakesight.woff2') format('woff2'),
-      url('./Lakesight.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -220,11 +198,11 @@ body,
   left: 50%;
   z-index: 30;
   transform: translate(-50%, -50%);
-  padding: 2.5% 5%;
+  padding: 5% 5%;
   width: 70vw;
   height: 75vh;
   background-color: #fefeff50;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px);
   border-radius: 50px;
   display: flex;
   flex-direction: column;
@@ -232,7 +210,6 @@ body,
 
 .overlay-navigation {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   width: 100%;
 }
@@ -242,6 +219,8 @@ body,
   font-weight: 600;
   font-size: 1.45vw;
   line-height: 100%;
+  margin-top: 0%;
+  margin-bottom: 5%;
 }
 
 .overlay-close-button {
@@ -259,6 +238,178 @@ body,
 
 .overlay-close-button:hover {
   background-color: #fefeff75;
+}
+
+.overlay-description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.25vw;
+  line-height: 125%;
+  margin-top: 0;
+}
+
+.overlay-small-description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1vw;
+  line-height: 100%;
+  margin-bottom: 0;
+}
+
+/* OVERLAY ABOUT */
+
+.about-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.about-content-text {
+  width: 45%;
+  text-align: justify;
+}
+
+.about-portrait {
+  width: 45%;
+  height: 100%;
+  background-color: #f2f2f2;
+  border-radius: 50px;
+}
+
+/* OVERLAY AS SEEN IN */
+
+.seen-in-logos {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Center images horizontally */
+}
+
+.row img {
+  width: 8vw; 
+  height: auto;
+  margin: 1%;
+}
+
+/* RESOURCE */
+
+.resource {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resource-icons {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.resource-icon-box {
+  height: 20vh;
+  width: 30%;
+  background-color: #fefeff;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease-in;
+}
+
+.resource-icon-box:hover {
+  background-color: #fefeff75;
+}
+
+.resource-icons .fa-solid {
+  font-size: 3vw;
+}
+
+/* CONTACT */
+
+.contact-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-icon-box {
+  height: 20vh;
+  width: 30%;
+  background-color: #fefeff;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease-in;
+  cursor: pointer;
+}
+
+.contact-icon-box:hover {
+  background-color: #fefeff75;
+}
+
+.contact-icon-box .fa-brands {
+  font-size: 3vw;
+}
+
+.contact-icon-box .fa-solid {
+  font-size: 3vw;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 4vh 0;
+  background: transparent;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 15vw;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 15vw;
+  margin: 0 7vw;
+  opacity: 1;
 }
 
 /* SMOOTH SCROLL */
