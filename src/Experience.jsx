@@ -57,7 +57,18 @@ export default function Experience({ showOverlayOne, setShowOverlayOne, showOver
         showOverlaySix={showOverlaySix} setShowOverlaySix={setShowOverlaySix}
       />
       <ContactShadows scale={100} position={[0, -4, 0]} blur={1} far={10} opacity={0.7} />
-      <Rig />
+      {isMobile ? (
+        <OrbitControls 
+          minPolarAngle={Math.PI / -2} 
+          maxPolarAngle={Math.PI / 2} 
+          enableZoom={true} 
+          enableRotate={true} 
+          enablePan={false} 
+          ref={controlsRef}
+        />
+      ) : (
+        <Rig />
+      )}
 
       </>
   )
@@ -65,12 +76,27 @@ export default function Experience({ showOverlayOne, setShowOverlayOne, showOver
 
 function Rig() {
   useFrame((state, delta) => {
-    easing.damp3(
-      state.camera.position,
-      [Math.sin(-state.pointer.x) * 5, state.pointer.y * 3.5, 7.5 + Math.cos(state.pointer.x) * 10],
-      0.2,
-      delta,
-    )
+    const isMobile = window.innerWidth < 767;
+
+    // Adjust camera behavior for mobile if needed
+    if (isMobile) {
+      // Mobile-specific camera settings
+      easing.damp3(
+        state.camera.position,
+        [Math.sin(-state.pointer.x) * 3, state.pointer.y * 2.5, 150 + Math.cos(state.pointer.x) * 7],
+        0.2,
+        delta,
+      )
+    } else {
+      // Default settings for non-mobile
+      easing.damp3(
+        state.camera.position,
+        [Math.sin(-state.pointer.x) * 5, state.pointer.y * 3.5, 7.5 + Math.cos(state.pointer.x) * 10],
+        0.2,
+        delta,
+      )
+    }
+
     state.camera.lookAt(0, 0, 0)
   })
 }

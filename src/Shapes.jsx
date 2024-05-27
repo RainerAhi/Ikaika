@@ -7,7 +7,7 @@ import * as THREE from 'three';
 
 export default function Shapes({ showOverlayOne, setShowOverlayOne, showOverlayTwo, setShowOverlayTwo, showOverlayThree, setShowOverlayThree, showOverlayFour, setShowOverlayFour, showOverlayFive, setShowOverlayFive, showOverlaySix, setShowOverlaySix }) {
   const { camera, scene } = useThree();
-  const [hoveredText, setHoveredText] = useState("     IKAIKA      ");
+  const [hoveredText, setHoveredText] = useState("     HOME      ");
 
   const handleMouseEnter = (mesh, text) => {
       document.body.style.cursor = 'pointer';
