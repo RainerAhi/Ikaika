@@ -6,7 +6,7 @@ export default function CanvasContainer({ showOverlayOne, setShowOverlayOne, sho
 
     return (
         <>
-         <Canvas shadows camera={{ position: [0, 0, 10], fov: 35 }} >
+         <Canvas shadows camera={{ position: [0, 0, 7.5], fov: 35 }} >
             <Experience
                 showOverlayOne={showOverlayOne} setShowOverlayOne={setShowOverlayOne}
                 showOverlayTwo={showOverlayTwo} setShowOverlayTwo={setShowOverlayTwo} 
