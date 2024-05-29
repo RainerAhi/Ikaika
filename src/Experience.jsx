@@ -83,7 +83,7 @@ function Rig() {
       // Mobile-specific camera settings
       easing.damp3(
         state.camera.position,
-        [Math.sin(-state.pointer.x) * 3, state.pointer.y * 2.5, 145 + Math.cos(state.pointer.x) * 7],
+        [Math.sin(-state.pointer.x) * 3, state.pointer.y * 2.5, 147.5 + Math.cos(state.pointer.x) * 7],
         0.2,
         delta,
       )
