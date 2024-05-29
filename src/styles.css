@@ -469,7 +469,7 @@ html.lenis {
   z-index: 30;
   transform: translate(-50%, -50%);
   padding: 5% 5%;
-  width: 80vw;
+  width: 90vw;
   height: fit-content;
   background-color: #fefeff50;
   backdrop-filter: blur(16px);
